@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADF-Learn-001"
 		},
+		"ADLSGen2_for_sql_2_adlsGen2_accountKey": {
+			"value": ""
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
@@ -31,6 +34,15 @@
 		},
 		"AzureSqlDatabase2_connectionString": {
 			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabasetoADLSGen2_connectionString": {
+			"value": ""
+		},
+		"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
+			"value": "https://destinationlearn.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://destinationlearn.dfs.core.windows.net/"

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-Learn-001"
 		},
+		"ADLSGen2_for_sql_2_adlsGen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSGen2_for_sql_2_adlsGen2'"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -42,6 +46,18 @@
 		"AzureSqlDatabase2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
+		},
+		"AzureSqlDatabasetoADLSGen2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabasetoADLSGen2'"
+		},
+		"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://destinationlearn.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -86,6 +102,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ADLSGen2_for_sql_2_adlsGen2_accountKey": {
+						"value": "[parameters('ADLSGen2_for_sql_2_adlsGen2_accountKey')]"
+					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
@@ -112,6 +131,15 @@
 					},
 					"AzureSqlDatabase2_connectionString": {
 						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"AzureSqlDatabase3_connectionString": {
+						"value": "[parameters('AzureSqlDatabase3_connectionString')]"
+					},
+					"AzureSqlDatabasetoADLSGen2_connectionString": {
+						"value": "[parameters('AzureSqlDatabasetoADLSGen2_connectionString')]"
+					},
+					"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
+						"value": "[parameters('ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
