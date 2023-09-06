@@ -129,13 +129,7 @@
 							"outputs": [
 								{
 									"referenceName": "AzureSqlLinkedServices",
-									"type": "DatasetReference",
-									"parameters": {
-										"TableName": {
-											"value": "@replace(item().name,'.csv','' )",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}

@@ -51,7 +51,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlLinkedServices",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
