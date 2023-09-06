@@ -9,6 +9,12 @@
 					"referenceName": "DynamicPL_LookUp",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SQL_2_ADLSGen2",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
@@ -16,7 +22,7 @@
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 3,
-				"startTime": "2023-09-06T09:35:00",
+				"startTime": "2023-09-06T17:06:00",
 				"timeZone": "Eastern Standard Time"
 			}
 		}
