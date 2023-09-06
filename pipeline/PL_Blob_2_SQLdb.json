@@ -45,7 +45,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_input_dataset",
+						"referenceName": "salesdata",
 						"type": "DatasetReference"
 					}
 				],
