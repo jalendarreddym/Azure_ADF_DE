@@ -1125,7 +1125,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -1147,13 +1147,66 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 3,
-						"startTime": "2023-09-06T17:06:00",
+						"startTime": "2023-09-06T17:13:00",
 						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/DynamicPL_LookUp')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_SQL_2_ADLSGen2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PL2PL_blob_2_sql_2_adlsGen2')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "PL_Blob_2_SQLdb_MultipleFiles",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "Execute Pipeline2",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Execute Pipeline1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "PL_SQL_2_ADLSGen2",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_Blob_2_SQLdb_MultipleFiles')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_SQL_2_ADLSGen2')]"
 			]
 		}
