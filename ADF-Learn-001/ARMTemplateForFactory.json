@@ -2576,11 +2576,18 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
 							"referenceName": "DynamicPL_LookUp",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_SQL_2_ADLSGen2",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -2591,13 +2598,14 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 3,
-						"startTime": "2023-09-06T09:35:00",
+						"startTime": "2023-09-06T17:06:00",
 						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/DynamicPL_LookUp')]"
+				"[concat(variables('factoryId'), '/pipelines/DynamicPL_LookUp')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_SQL_2_ADLSGen2')]"
 			]
 		}
 	]
