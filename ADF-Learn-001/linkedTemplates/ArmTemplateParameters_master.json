@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-Learn-001"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_Destination_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageJsonRead_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage_input_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorageCovidData_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://destinationlearn.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://destinationlearn.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorageCovidData_properties_typeProperties_url": {
+			"value": "https://destinationlearn.dfs.core.windows.net/"
+		},
+		"HttpServerGIT_properties_typeProperties_url": {
+			"value": "@{linkedService().baseurl}"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
