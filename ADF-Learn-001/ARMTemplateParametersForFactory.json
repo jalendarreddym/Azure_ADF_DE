@@ -41,6 +41,9 @@
 		"AzureSqlDatabasetoADLSGen2_connectionString": {
 			"value": ""
 		},
+		"blobtoadlsgen2_accountKey": {
+			"value": ""
+		},
 		"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
 			"value": "https://destinationlearn.dfs.core.windows.net/"
 		},
@@ -55,6 +58,9 @@
 		},
 		"HttpServerGIT_properties_typeProperties_url": {
 			"value": "@{linkedService().baseurl}"
+		},
+		"blobtoadlsgen2_properties_typeProperties_url": {
+			"value": "https://destinationlearn.dfs.core.windows.net/"
 		}
 	}
 }

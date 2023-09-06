@@ -55,6 +55,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabasetoADLSGen2'"
 		},
+		"blobtoadlsgen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'blobtoadlsgen2'"
+		},
 		"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://destinationlearn.dfs.core.windows.net/"
@@ -74,6 +78,10 @@
 		"HttpServerGIT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().baseurl}"
+		},
+		"blobtoadlsgen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://destinationlearn.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -138,6 +146,9 @@
 					"AzureSqlDatabasetoADLSGen2_connectionString": {
 						"value": "[parameters('AzureSqlDatabasetoADLSGen2_connectionString')]"
 					},
+					"blobtoadlsgen2_accountKey": {
+						"value": "[parameters('blobtoadlsgen2_accountKey')]"
+					},
 					"ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_for_sql_2_adlsGen2_properties_typeProperties_url')]"
 					},
@@ -152,6 +163,9 @@
 					},
 					"HttpServerGIT_properties_typeProperties_url": {
 						"value": "[parameters('HttpServerGIT_properties_typeProperties_url')]"
+					},
+					"blobtoadlsgen2_properties_typeProperties_url": {
+						"value": "[parameters('blobtoadlsgen2_properties_typeProperties_url')]"
 					}
 				}
 			},
