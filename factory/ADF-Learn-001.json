@@ -1,0 +1,9 @@
+{
+	"name": "ADF-Learn-001",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7c2e99dd-4f1c-46c5-9d46-a68bffc11907",
+		"tenantId": "d9a799d0-92d8-494f-b291-10db588c2a11"
+	}
+}

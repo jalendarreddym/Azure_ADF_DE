@@ -1,0 +1,30 @@
+{
+	"name": "ParquetHttptoADLSgen2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageCovidData",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": "CovidData/",
+				"fileSystem": "refined"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

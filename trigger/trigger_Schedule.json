@@ -1,0 +1,24 @@
+{
+	"name": "trigger_Schedule",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "DynamicPL_LookUp",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 3,
+				"startTime": "2023-09-06T09:35:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}

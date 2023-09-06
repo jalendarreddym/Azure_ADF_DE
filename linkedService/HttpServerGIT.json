@@ -1,0 +1,19 @@
+{
+	"name": "HttpServerGIT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "https://github.com/sekharkoduru/https-github.com-suresh12345-AzureDataEngineering_Batch/blob/main/raw/main/ecdc_data/case_deaths_uk_ind_only.csv",
+		"parameters": {
+			"baseurl": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "@{linkedService().baseurl}",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
