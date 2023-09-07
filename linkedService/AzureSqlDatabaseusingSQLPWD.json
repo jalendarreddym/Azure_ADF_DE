@@ -1,0 +1,19 @@
+{
+	"name": "AzureSqlDatabaseusingSQLPWD",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=learnsqlserver01.database.windows.net;Initial Catalog=AzureSQLDatabase001;User ID=sqlserver",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "Ls_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SQLPWD",
+				"secretVersion": "62c4d982f3714f2da6cc3cc62fe7a008"
+			}
+		}
+	}
+}
