@@ -1,0 +1,18 @@
+{
+	"name": "AzureSqlDatabaseusinhkeyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "Ls_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SQLConnectionString",
+				"secretVersion": "aed077081a2a400ab33c3b77614db7f9"
+			}
+		}
+	}
+}
