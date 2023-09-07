@@ -2670,37 +2670,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TumblingTrigger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "PL_TumblingTrigger",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 5,
-					"startTime": "2023-09-06T22:36:00Z",
-					"delay": "00:00:30",
-					"maxConcurrency": 10,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL_TumblingTrigger')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/PL_TumblingTrigger')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -2878,6 +2847,33 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/blobtoadlsgen2')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Minute",
+					"interval": 5,
+					"startTime": "2023-09-06T19:05:00Z",
+					"delay": "00:00:30",
+					"maxConcurrency": 10,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": [
+						{
+							"type": "SelfDependencyTumblingWindowTriggerReference",
+							"offset": "-0.00:01:00"
+						}
+					]
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
